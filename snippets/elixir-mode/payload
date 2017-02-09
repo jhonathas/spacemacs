@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: payload
+# key: payload
+# --
+payload field :$0 do
+  input do
+    field :id, non_null(:id)
+  end
+  output do
+    field :id, :id
+  end
+  resolve &API.Resolver.perform(:, &1, &2)
+end
